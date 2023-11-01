@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>MAIN PAGE</title>
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="css.css">
+    
+</head>
+<body style="background-color:lavender;">
+
+  <div id="header">
+        <h1 align="center" style="border:7px solid slateblue;color: midnightblue;background-color:powderblue;font-family:verdana;">Welcome to the Zee's Online Shop!</h1>
+
+        <p align="center" id="demo"></p>
+        <script>
+        const d = new Date();
+        document.getElementById("demo").innerHTML = d;
+        </script>
+
+
+        <p align="right" id="link">
+            <a href="login.html">LOGIN</a>  |
+            <a href="registration.html">REGISTRATION</a>
+        </p>
+    </div>
+
+    <script type = "text/javascript" >
+          
+            // One day Time in ms (milliseconds)
+            var one_day = 1000 * 60 * 60 * 24
+          
+        // To set present_dates to two variables
+        var present_date = new Date();
+          
+        // 0-11 is Month in JavaScript
+        var backtoschoolsale_day = new Date(present_date.getFullYear(), 9, 1)
+          
+        // To Calculate next year's Christmas if passed already.
+        if (present_date.getMonth() == 9 && present_date.getdate() > 1)
+            backtoschoolsale_day.setFullYear(backtoschoolsale_day.getFullYear() + 1)
+          
+        // To Calculate the result in milliseconds and then converting into days
+        var Result = Math.round(backtoschoolsale_day.getTime() - present_date.getTime()) / (one_day);
+          
+        // To remove the decimals from the (Result) resulting days value
+        var Final_Result = Result.toFixed(0);
+          
+        var text = "    <<< Number of days till the next sale is: " + Final_Result + " >>>";
+        //To display the final_result value
+        document.write(text);
+          
+        </script>
+    <hr />
+    <nav class="navbar navbar-expand-sm bg-light">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="items.html">Items</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="details.html">Details</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="basket.html">Basket</a>
+            </li>
+        </ul>
+    </nav>
+    <hr />
+
+    <div>
+        <div class="container">
+        <div class="row">
+            <div class="col-sm-8">
+                
+                <h5>Discounts Throughout Year</h5>
+
+                <table class="table table-hover">
+                    <tr>
+                        <th style="background-color: powderblue; text-decoration-line: underline;">Sale Name</th>
+                        <th style="background-color: powderblue; text-decoration-line: underline;">Date From</th>
+                        <th style="background-color: powderblue; text-decoration-line: underline;">Date To</th>
+                    </tr>
+                    <tr>
+                        <td>World Art Day</td>
+                        <td>15. 4. 2022</td>
+                        <td>16. 4. 2022</td>
+                    </tr>
+                    <tr>
+                        <td>Children's Day</td>
+                        <td>1. 6. 2022</td>
+                        <td>7. 6. 2022</td>
+                    </tr>
+                    <tr>
+                        <td>Back To School</td>
+                        <td>1. 9. 2022</td>
+                        <td>10. 9. 2022</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="col-sm-4">
+                <form action="https://www.w3schools.com/action_page.php" method="post">
+                    <fieldset>
+                        <legend>Input Form</legend>
+
+                        <div class="form-group">
+                            <label for="productName">Enter the product name*:</label>
+                            <input type="text" class="form-control" name="productName" id="productName"
+                                placeholder="Enter name..." size="50" pattern="[A-Za-z]*" maxlength="30"
+                                title="Only letters are allowed!" required />
+                        </div>
+
+                        <div class="form-group">
+                            <label for="description">Short description*:</label>
+                            <textarea rows="4" cols="65" name="description" id="description" class="form-control"
+                                required></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="producttype">Product type*:</label>
+                            <select class="form-control" id="producttype" name="producttype" required>
+                                <option value="">--Choose product type--</option>
+                                <option value="watercolor">Watercolor Set</option>
+                                <option value="notebook">Notebook Set</option>
+                                <option value="pencil">Pencil Set</option>
+                                <option value="lunchbox">Lunchbox</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="prodDate">Production date:</label>
+                            <input class="form-control" type="date" max="2018-05-01" min="1999-12-31"
+                                name="prodDate" id="prodDate" />
+                            </p>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="nuOfPieces">Number of pieces left:</label>
+                            <input type="number" class="form-control" name="nuOfPieces" id="nuOfPieces" min="20" max="160"
+                                step="1" value="80" aria-describedby="nuOfPiecesHelp" />
+                            <small id="nuOfPiecesHelp" class="form-text text-muted">Enter the number of pieces that 
+                                are currently in stock.</small>
+                        </div>
+
+                        <p>
+                            <input type="submit" class="btn btn-primary" value="Send">
+                            <input type="reset" class="btn btn-danger" value="Reset">
+                        </p>
+                    </fieldset>
+                </form>
+            </div>
+        </div>    
+    </div>
+
+    <hr />
+    <div class="container-fluid footer">
+        <div class="navbar-nav">
+            <i>Contact: <a href="mailto:zeynephaykir@student.um.si">zeynephaykir@student.um.si</a></i>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+
+    
+
+
+</div>
+</body>
+</html>

@@ -1,0 +1,32 @@
+body {
+    background-color: lavender;
+}
+
+table {
+    border: solid slateblue;
+    border-style: dotted;
+    color: white;
+}
+
+h1 {
+    color: midnightblue;
+}
+
+#header a {
+    color: midnightblue;
+
+}
+
+#header {
+    background-color: lavender;
+    padding: 0.5em;
+}
+
+.link {
+    font-size: x-small;
+    color: midnightblue;
+}
+
+.footer {
+    background-color: white;
+}
